@@ -1,0 +1,4 @@
+This is quiz project for Nest.js learning assignment. 
+The app is for creating, and solving quizzes. First off the teacher creates a quizz by adding questions and anwsers for those.
+After that the information is added to a database, and afterwards, students can solve the quiz, which afterwards gives them points for the solution.
+All of that is done using Nest.js on a database which uses docker 
