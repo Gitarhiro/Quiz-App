@@ -1,0 +1,16 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Test {
+  id: Int!
+  name: String!
+  subject: String!
+  isActive: Boolean!
+}
+
+type Query {
+  getTest: Test!
+  getTestbyID(id: Int!): Test!
+  getTests: [Test!]!
+}
