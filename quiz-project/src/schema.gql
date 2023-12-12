@@ -2,15 +2,72 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Test {
+type Answer {
+  id: Int!
+  contents: String
+  isCorrect: Boolean!
+  sortOrder: Int
+}
+
+type Question {
+  id: Int!
+  type: String!
+  content: String!
+  quiz: [Quiz!]!
+  answers: [Answer!]!
+}
+
+type Quiz {
   id: Int!
   name: String!
-  subject: String!
-  isActive: Boolean!
+  topic: String!
+  questions: [Question!]
+}
+
+type Solution {
+  score: Int!
 }
 
 type Query {
-  getTest: Test!
-  getTestbyID(id: Int!): Test!
-  getTests: [Test!]!
+  getQuizes: [Quiz!]!
+  getQuizQuestion(id: Int!): [Question!]
+  solveQuiz(id: Int!): [Question!]
+}
+
+type Mutation {
+  createQuiz(createquiz: CreateQuizDto!): Quiz!
+  deleteQuiz(id: Int!): Boolean!
+  createQuestion(createquestion: CreateQuestionDto!): Question!
+  deleteQuestion(id: Int!): Boolean!
+  createAnwser(createanwser: CreateAnswerDto!): Answer!
+  solveTheQuiz(inputSolution: InputSolution!): Solution!
+}
+
+input CreateQuizDto {
+  name: String!
+  topic: String!
+}
+
+input CreateQuestionDto {
+  type: String!
+  content: String!
+  quiz_id: Int!
+}
+
+input CreateAnswerDto {
+  contents: String!
+  isCorrect: Boolean! = false
+  sortOrder: Int
+  ques_id: Int!
+}
+
+input InputSolution {
+  quiz_id: Int!
+  answers: [NewCreateAnswerDto!]!
+}
+
+input NewCreateAnswerDto {
+  id: Int!
+  contents: String!
+  sortOrder: Int
 }
