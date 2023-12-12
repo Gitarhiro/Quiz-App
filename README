@@ -1,4 +1,22 @@
+Quiz application
+
 This is quiz project for Nest.js learning assignment. 
 The app is for creating, and solving quizzes. First off the teacher creates a quizz by adding questions and anwsers for those.
 After that the information is added to a database, and afterwards, students can solve the quiz, which afterwards gives them points for the solution.
 All of that is done using Nest.js on a database which uses docker 
+
+To run the project use terminal and type in following commands
+1. Open the folder
+  $ cd quiz-project
+2. Install all the nest extensions
+  $ npm install
+3. Set up docker database 
+  $ docker compose up Quiz -d
+After setting up the database you have to run it from your docker
+
+4. Run the program
+  $ npm run start:dev
+To use the program go to: http://localhost:3000/graphql
+All the queries can be seen in docs tab
+
+
