@@ -19,4 +19,6 @@ After setting up the database you have to run it from your docker
 To use the program go to: http://localhost:3000/graphql
 All the queries can be seen in docs tab
 
-
+To solve the quiz first create one, then you should add questions and corresponding answers to those. 
+Then to properly solve quiz you can first use query to display all the questions of the quiz with possible answers: solveQuiz in questionResolver.
+After that you have to use solveTheQuiz Mutation to create a Solution object in which you create answers objects for particular questions.
