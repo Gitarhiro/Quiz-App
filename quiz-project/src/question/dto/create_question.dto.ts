@@ -1,5 +1,6 @@
 import { Field, InputType, Int } from "@nestjs/graphql";
 import { IsIn } from "class-validator";
+import { CreateAnswerDto } from "src/answer/dto/create_answer.dto";
 
 @InputType()
 export class CreateQuestionDto {
@@ -14,4 +15,7 @@ export class CreateQuestionDto {
     
     @Field((type) => Int)
     quiz_id: number;
+
+    @Field(()=> [CreateAnswerDto])
+    answers: CreateAnswerDto[];
 }

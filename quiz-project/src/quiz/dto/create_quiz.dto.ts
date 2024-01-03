@@ -1,4 +1,5 @@
 import { Field, InputType } from "@nestjs/graphql";
+import { CreateQuestionDto } from "src/question/dto/create_question.dto";
 
 @InputType()
 export class CreateQuizDto {
@@ -7,4 +8,7 @@ export class CreateQuizDto {
 
     @Field()
     topic: string;
+
+    @Field(()=> [CreateQuestionDto])
+    questions: CreateQuestionDto[];
 }

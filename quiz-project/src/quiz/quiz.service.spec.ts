@@ -39,7 +39,7 @@ describe('QuizService', () => {
   });
 
   it('should create new quiz', async()=>{
-    expect(await service.createQuiz({name: "nowy quiz", topic: "math"})).toEqual({
+    expect(await service.createQuiz({name: "nowy quiz", topic: "math", questions:[]})).toEqual({
       id: expect.any(Number),
       name: "nowy quiz",
       topic: "math"

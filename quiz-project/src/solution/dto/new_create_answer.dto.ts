@@ -4,7 +4,7 @@ import { Field, InputType, Int } from "@nestjs/graphql";
 export class NewCreateAnswerDto{
 
     @Field((type) => Int)
-    id: number
+    questionId: number
 
     @Field()
     contents: string;
